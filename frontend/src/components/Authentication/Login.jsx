@@ -1,6 +1,6 @@
 import Eye from "../../assets/icons/Eye.png";
 import { useState } from "react";
-import { axiosCall,  accessTokenIsValid, refreshTokenLS} from "../../conf/axios.js";
+import { axiosCall, accessTokenIsValid, refreshTokenLS } from '../../conf/axios.js'
 import { ACCESS_TOKEN_KEY, REFRESH_TOKEN_KEY } from "../../conf/common.js";
 
 function Login(props) {
@@ -20,11 +20,10 @@ function Login(props) {
         localStorage.setItem(REFRESH_TOKEN_KEY, data.refresh)
     };
 
-    function fireSetUsername(e) { setUsername(e.target.value); }
-    function fireSetPassword(e) { setPassword(e.target.value); }
+    function fireSetUsername(e) { setUsername(e.target.value) } 
+    function fireSetPassword(e) { setPassword(e.target.value) } 
 
-
-
+    
     return (
         <div>
             <form className="form-group" onSubmit={submit}>
@@ -51,7 +50,6 @@ function Login(props) {
                     <a className='восстановить' href='#'>Восстановить</a>
                 </p>
                 <button className='войти'>Войти</button>
-
             </form>
         </div>
     );
