@@ -22,7 +22,7 @@ export default function Navigation() {
                         </a>
                         <span>
                             <img src={phoneVector} width="15" height="15" alt="" />
-                                (+99833) 4747477
+                                (+99893) 335-14-99
                             </span>
                         </div>
                         <div className="upper-right-nav">
