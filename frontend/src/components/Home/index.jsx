@@ -1,6 +1,7 @@
 import Carousel from '../Carousel'
 
-function  Home() {
+
+function Home() {
     return (
         <main>
             <Carousel 
@@ -10,7 +11,7 @@ function  Home() {
                 imgHeight="600px"
             />
         </main>
-    )
+    );
 }
 
-export default Home
+export default Home;

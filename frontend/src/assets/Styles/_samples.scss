@@ -1,4 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap');
+// Poppins
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap");
+// 'Josefin Sans'
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&family=Poppins:wght@600&display=swap");
 @import "./settings";
 
 .success-btn {
@@ -6,13 +9,11 @@
     background-color: $violet;
     color: snow;
 }
-
 .info-btn {
     @extend %btn;
     background-color: $dark-blue;
     color: snow;
 }
-
 .danger-btn {
     @extend %btn;
     background-color: $danger;

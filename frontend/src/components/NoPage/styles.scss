@@ -1,5 +1,5 @@
-@use '../../assets/Styles/_resets';
-@import '../../assets/Styles/_settings';
+@use "../../assets/Styles/_resets";
+@import "../../assets/Styles/_settings";
 
 .no-page {
     display: flex;
@@ -13,11 +13,11 @@
         text-align: left;
         background-color: $light-violet;
     }
-
     .not-found-text {
         color: $danger;
     }
+
     .brands-img {
         margin: 100px 0;
     }
-}   
+}

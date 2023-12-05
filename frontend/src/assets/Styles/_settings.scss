@@ -4,7 +4,6 @@ $light-violet: #f1f0ff;
 $dark-blue: #151875;
 $light: #fff;
 
-
 %btn {
     display: inline-block;
     padding: 10px 20px;
@@ -18,6 +17,7 @@ $light: #fff;
     display: flex;
     justify-content: center;
     align-items: center;
+
     &:hover {
         transform: scale(0.9);
         text-decoration: none;
