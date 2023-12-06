@@ -15,14 +15,14 @@ class Furniture(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
     
     def save(self, *args, **kwargs):
-        super().save(*args, **kwargs)
-
+        super(Furniture, self).save(*args, **kwargs)
+        
         img = Image.open(self.image.path)
         if img.height > 600 or img.width > 600:
             output_size = (600, 600)
             img.thumbnail(output_size)
             img.save(self.image.path)
-            
+
     def delete(self, *args, **kwargs):
         image_url = self.image.url
         if image_url != '/media/furniture/default.jpg':
