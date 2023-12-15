@@ -1,5 +1,5 @@
-from django.conf import settings
 from django.conf.urls.static import static
+from django.conf import settings
 from django.contrib import admin
 from django.urls import path, include
 
@@ -7,7 +7,8 @@ from django.urls import path, include
 from rest_framework_simplejwt.views import (
     TokenObtainPairView,
     TokenRefreshView,
-    TokenVerifyView
+    TokenVerifyView,
+    TokenBlacklistView
 )
 
 urlpatterns = [
@@ -17,13 +18,14 @@ urlpatterns = [
 
     path('api/users/', include('users.urls')),
     path('api/token/create/', TokenObtainPairView.as_view(),
-                                                name='token_obtain_pair'),
+         name='token_obtain_pair'),
     path('api/token/refresh/', TokenRefreshView.as_view(),
-                                                name='token_refresh'),
+         name='token_refresh'),
     path('api/token/verify/', TokenVerifyView.as_view(),
-                                                name='token_verify'),
+         name='token_verify'),
+    path('api/token/blacklist/', TokenBlacklistView.as_view(),
+         name='token_blacklist'),
 ]
-
 
 urlpatterns += static(
     settings.MEDIA_URL,

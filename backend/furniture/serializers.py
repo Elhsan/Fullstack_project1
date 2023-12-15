@@ -8,3 +8,12 @@ class FurnitureSerializer(serializers.ModelSerializer):
         model = Furniture
         fields = ["name", "description", "price", 
                 "color", "image", "category", "quantity"]
+
+
+class FurnitureSerializerForWishlist(serializers.ModelSerializer):
+    class Meta:
+        model = Furniture
+        fields = ["id", "name", "description", "price", 
+                "color", "image", "category", "quantity"]
+
+        
