@@ -7,6 +7,7 @@ import AuthControl from './AuthControl'
 import Profile from './Profile'
 import Products from './Products'
 
+
 const AuthHome = AuthControl(Home)
 const AuthProfile = AuthControl(Profile)
 const AuthProducts = AuthControl(Products)
@@ -19,7 +20,7 @@ export default function AllComponents() {
         <Route index element={<AuthHome />} />
         <Route path='/auth' element={<Auth />} />
         <Route path='/profile' element={<AuthProfile />} />
-        <Route path='/Products' element={<AuthProducts />} />
+        <Route path='/products' element={<AuthProducts />} />
         <Route path="*" element={<NoPage />} />
       </Route>
     </Routes>
