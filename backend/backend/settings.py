@@ -44,8 +44,9 @@ INSTALLED_APPS = [
     'furniture',
     'rest_framework',
     'corsheaders',
-    'rest_framework_simplejwt',
     'rest_framework.authtoken',
+    'rest_framework_simplejwt',
+    'rest_framework_simplejwt.token_blacklist',
 ]
 
 MIDDLEWARE = [
@@ -64,7 +65,7 @@ CORS_ALLOW_CREDENTIALS = True
 CORS_ALLOW_METHODS = ["DELETE", "GET", "OPTIONS", "PATCH", "POST", "PUT"]
 CORS_ALLOW_HEADERS = [
     "accept",  "accept-encoding",  "authorization",  "content-type",  "dnt",  "origin",
-    "user-agent",   "x-csrftoken",   "x-requested-with",   
+    "user-agent",   "x-csrftoken",   "x-requested-with",
 ]
 
 # LOGIN_REDIRECT_URL = 'home_page'
@@ -159,13 +160,11 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 
-
-
-
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
@@ -173,14 +172,6 @@ REST_FRAMEWORK = {
         'rest_framework_simplejwt.authentication.JWTAuthentication',
         # 'rest_framework.authentication.TokenAuthentication',
     ],
-    'DEFAULT_THROTTLE_CLASSES': [
-        'rest_framework.throttling.AnonRateThrottle',  # for anonymous users
-        'rest_framework.throttling.UserRateThrottle',  # for authenticated users
-    ],
-    'DEFAULT_THROTTLE_RATES': {
-        'anon': '10/minute',  # 10 requests per minute
-        'user': '20/minute',  # 20 requests per minute
-    },
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
     'PAGE_SIZE': 2,
 }
